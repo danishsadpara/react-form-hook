@@ -1,21 +1,34 @@
-import React from 'react'
-import {useForm} from 'react-hook-form'
-const ReactForm = () => {
-    const {register} =useForm()
-  return (
-    <div>
-        <form>
-            <label htmlFor="username">User Name:</label>
-            <input type="text" id='username' {...register("username")} />
-            <br />
-            <label htmlFor="email">Email Address:</label>
-            <input type="email" id='email' {...register("email")} />
-            <br />
-            <label htmlFor="channel">Channel</label>
-            <input type="text" id='text'{...register("channel")}/>
-        </form>
-    </div>
-  )
-}
+// ReactForm.js
 
-export default ReactForm
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
+
+const ReactForm = () => {
+  const { register, control } = useForm();
+
+  return (
+    <div className="form-container">
+      <form className="form">
+        <label className="form-label" htmlFor="username">
+          User Name:
+        </label>
+        <input className="form-input" type="text" id="username" {...register('username')} />
+        <br />
+        <label className="form-label" htmlFor="email">
+          Email Address:
+        </label>
+        <input className="form-input" type="email" id="email" {...register('email')} />
+        <br />
+        <label className="form-label" htmlFor="channel">
+          Channel
+        </label>
+        <input className="form-input" type="text" id="channel" {...register('channel')} />
+        <button className='submit-button '>Submit</button>
+      </form>
+      <DevTool control={control} />
+    </div>
+  );
+};
+
+export default ReactForm;

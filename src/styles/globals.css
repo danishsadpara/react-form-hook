@@ -2,3 +2,39 @@
   padding: 0%;
   margin: 0%;
 }
+/* ReactForm.css */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 20px 40px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.submit-button {
+  width: 50%;
+  padding: 8px;
+  border-radius: 10px;
+}
