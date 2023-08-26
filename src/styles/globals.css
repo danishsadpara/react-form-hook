@@ -36,5 +36,7 @@
 .submit-button {
   width: 50%;
   padding: 8px;
+  border: 1px solid #ccc;
+  background-color: rgb(136, 188, 233);
   border-radius: 10px;
 }

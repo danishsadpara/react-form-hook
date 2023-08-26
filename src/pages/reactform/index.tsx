@@ -3,13 +3,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
-
+type FormValues={  
+    username:"string",
+    email:"string",
+    channel:"string"
+}
 const ReactForm = () => {
-  const { register, control } = useForm();
-
+  const { register, control, handleSubmit } = useForm<FormValues>();
+const onSubmit =(data:FormValues)=>{
+    console.log(data)
+}
   return (
     <div className="form-container">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <label className="form-label" htmlFor="username">
           User Name:
         </label>
