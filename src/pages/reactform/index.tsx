@@ -9,22 +9,26 @@ type FormValues={
     channel:"string"
 }
 const ReactForm = () => {
-  const { register, control, handleSubmit } = useForm<FormValues>();
+  const { register, control, handleSubmit } = useForm<FormValues    >();
 const onSubmit =(data:FormValues)=>{
     console.log(data)
 }
   return (
     <div className="form-container">
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
         <label className="form-label" htmlFor="username">
           User Name:
         </label>
-        <input className="form-input" type="text" id="username" {...register('username')} />
+        <input className="form-input" type="text" id="username" {...register('username',{required:"username is required"})} />
         <br />
         <label className="form-label" htmlFor="email">
           Email Address:
         </label>
-        <input className="form-input" type="email" id="email" {...register('email')} />
+        <input className="form-input" type="email" id="email" {...register('email',{pattern:{
+           value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+           message: "invalid email"    
+        }}   )            
+        } />
         <br />
         <label className="form-label" htmlFor="channel">
           Channel
